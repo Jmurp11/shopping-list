@@ -59,7 +59,6 @@ function MutateItemForm(props: {
 
   const itemNameInput = useRef<TextFieldProps>();
   const descriptionInput = useRef<TextFieldProps>();
-  const quantityInput = useRef<SelectProps>();
 
   function handleChange(event: SelectChangeEvent<typeof quantity>) {
     const {
