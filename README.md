@@ -5,7 +5,6 @@
 * example:
 
     `
-    TYPE="postgres"
     HOST=localhost
     DBPORT=5432
     USERNAME=postgres
