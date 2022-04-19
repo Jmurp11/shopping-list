@@ -18,19 +18,23 @@
 ### client
 
 * using npm
+
     `cd client && npm install`
 
 * using yarn
+
     `cd client && yarn install`
 
 ### server
 
 * using npm
+
     `cd server && npm install`
 
 * using yarn
+
     `cd server && yarn install`
-    
+
 ## Run React Frontend
 
 - open a new terminal and run the following:
