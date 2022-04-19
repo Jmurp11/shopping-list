@@ -22,7 +22,7 @@
 
 * using yarn
 
-    `cd client && yarn install`
+    `cd client && yarn`
 
 ### server
 
@@ -32,7 +32,7 @@
 
 * using yarn
 
-    `cd server && yarn install`
+    `cd server && yarn`
 
 ## Run React Frontend
 
