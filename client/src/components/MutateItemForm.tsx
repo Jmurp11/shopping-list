@@ -55,7 +55,7 @@ function MutateItemForm(props: {
   handleClose: () => void;
   handleSubmit: (item: ShoppingItemType) => void;
 }) {
-  const [quantity, setQuantity] = useState<string[]>([]);
+  const [quantity, setQuantity] = useState<string>("1");
 
   const itemNameInput = useRef<TextFieldProps>();
   const descriptionInput = useRef<TextFieldProps>();
@@ -66,7 +66,7 @@ function MutateItemForm(props: {
       target: { value },
     } = event;
 
-    setQuantity(typeof value === "string" ? value.split(",") : value);
+    setQuantity(value);
   }
 
   function setTitle() {
@@ -80,14 +80,7 @@ function MutateItemForm(props: {
   function getString(str: unknown): string {
     let toStr = "";
 
-    if (typeof str === "string") {
-      toStr = str;
-    }
-
-    if (Array.isArray(str)) {
-      toStr = str.toString();
-    }
-    return toStr;
+    return typeof str === "string" ? str : toStr;
   }
 
   function handleSubmit(_event: any) {
@@ -100,9 +93,7 @@ function MutateItemForm(props: {
       description: descriptionInput.current?.value
         ? getString(descriptionInput.current?.value)
         : "",
-      quantity: quantityInput.current?.value
-        ? getString(quantityInput.current?.value)
-        : "",
+      quantity: quantity
     };
 
     props.handleSubmit(item);
@@ -110,8 +101,8 @@ function MutateItemForm(props: {
 
   useEffect(() => {
     const quantDef = props.itemToEdit?.quantity ?? "1";
-    setQuantity([quantDef]);
-  }, [props.itemToEdit?.quantity, quantity]);
+    setQuantity(quantDef);
+  }, [props.itemToEdit?.quantity]);
 
   return (
     <Box sx={style}>
@@ -173,13 +164,11 @@ function MutateItemForm(props: {
           <Select
             labelId="how-many"
             id="how-many-select"
-            multiple
             value={quantity}
             onChange={handleChange}
             input={<OutlinedInput label="Quantity" />}
             MenuProps={MenuProps}
             required
-            inputRef={quantityInput}
           >
             {quantities.map((q) => (
               <MenuItem key={q} value={q}>
