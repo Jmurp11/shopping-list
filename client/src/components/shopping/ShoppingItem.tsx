@@ -22,6 +22,7 @@ import MutateItemForm from "../MutateItemForm";
 import { EDIT_ITEM, DELETE_ITEM } from "../../graphql/mutations";
 import { GET_ITEMS } from "../../graphql/queries";
 
+// TODO: possible refactor => move the Dialog into its own component
 function ShoppingItem(props: { item: ShoppingItemType }) {
   const [open, setOpen] = useState(false);
   const [completed, setCompleted] = useState(false);

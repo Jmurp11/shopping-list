@@ -18,6 +18,8 @@ import { ADD_ITEM } from "../graphql/mutations";
 import { GET_ITEMS } from "../graphql/queries";
 import classes from "./HomePage.module.css";
 
+// TODO: possible refactor => create Stack wrapper component
+// TODO: possible refactor => use more robust state managment tool for the modal state
 function HomePage() {
   const [open, setOpen] = useState(false);
   const [addItem] = useMutation(ADD_ITEM);

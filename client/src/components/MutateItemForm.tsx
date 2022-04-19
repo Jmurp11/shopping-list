@@ -46,6 +46,7 @@ const MenuProps = {
 
 const quantities = Array.from(Array(10).keys()).map((i) => i + 1);
 
+// TODO: possible refactor => add form validation, disable submit while errors are being thrown
 function MutateItemForm(props: {
   edit: boolean;
   itemToEdit?: ShoppingItemType;
@@ -87,7 +88,6 @@ function MutateItemForm(props: {
     return toStr;
   }
 
-  // TODO: Add some form validation
   function handleSubmit(_event: any) {
     _event.preventDefault();
 
