@@ -40,7 +40,11 @@ function HomePage() {
   const { error, data, loading } = useShoppingList();
 
   if (loading) {
-    return <CircularProgress />;
+    return (
+      <Stack direction="column" justifyContent="center" alignItems="center">
+        <CircularProgress />
+      </Stack>
+    );
   }
 
   if (error || data.error) {

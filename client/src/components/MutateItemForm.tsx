@@ -87,6 +87,7 @@ function MutateItemForm(props: {
     return toStr;
   }
 
+  // TODO: Add some form validation
   function handleSubmit(_event: any) {
     _event.preventDefault();
 
@@ -106,9 +107,9 @@ function MutateItemForm(props: {
   }
 
   useEffect(() => {
-    const quantDef = props.itemToEdit?.quantity ?? "0";
+    const quantDef = props.itemToEdit?.quantity ?? "1";
     setQuantity([quantDef]);
-  }, []);
+  }, [props.itemToEdit?.quantity, quantity]);
 
   return (
     <Box sx={style}>

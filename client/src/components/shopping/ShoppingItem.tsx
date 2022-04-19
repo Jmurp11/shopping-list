@@ -157,5 +157,3 @@ function ShoppingItem(props: { item: ShoppingItemType }) {
 }
 
 export default ShoppingItem;
-
-// TODO: Populate edit item with current vals
