@@ -1,6 +1,6 @@
 ## Summary
 
-* My front end experience is more heavily in Angular and I have not had much exposure to React.  I noted with TODO's some areas where my knowledge of best practices may have come up short, but I wanted to ensure that I completed the challenge in a reasonable time frame.  With that said, the application matches with the mock up images.  I hope that this shows my ability to pick up React quickly.
+* Shopping list application using graphql, nodejs, and reactjs
 
 ## Setting up SQL Connection
 
